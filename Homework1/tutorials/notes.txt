@@ -1,0 +1,80 @@
+Protocols = set of commuication rules that two sides agree to use when comunicating
+
+IP = unique address for every client/server
+
+Socket = channel down which information can be sent  between client and server via different protocols(ex. HTTP or FTP)
+
+FTP = File Transfer Protocol
+
+Client< ------>socket<------->server
+
+TCP = protocol that split up the data into smaller little sections and transfers them into the socket
+
+The small sections in the TCP are called packets.
+
+
+Ports = a program running on a computer can listen for requests sent to a particluar port number
+
+
+Creating servers:
+
+Response headers = content type and status
+
+Buffer = temporary storage spot for a chunk of data that is being transferred from one place to another
+The buffer is filled with data, then passed along
+Transfer small chunks of data at a time.
+
+
+Stream = stream of data that flows over time from one place to another. 
+The data flows down the stream into the buffers to be processed and sent to the client
+Streams are transfering data and increasing the performance
+
+
+Readable streams = allow node js to read data from stream
+Writable streams - allow node js to write data to a stream
+Duplex = allow node js to read and to write data on stream
+
+
+Pipes = taking dataa from the read stream and then pipe it to the write stream
+
+
+npm = Node Package Manager (third party packages and modules to help out with our project)
+npm = bunch of code
+
+npm init = after filling the request it creates package.json file
+
+
+intalation:
+1. www.npmjs.com
+2. find the utility
+3. copy the code
+4. paste the code in node js (terminal);
+5. after instalation creates folder node_modules
+
+
+Uninstalation:
+1. In terminal we write: npm uninstall modulename
+
+nodemon = app that monitor your application files so that when it's running in a browser and we re listening to the server if we make a change
+            in one of the  app code files, it can monitor that and when we save that file it restars the server automatically
+
+
+Express = famous node package( easy and flexible routing system, integrates with many templating engines, contains a middleware framework)
+
+
+HTTP Methods:
+- get
+- Post 
+- delete
+- put
+
+Responding to requests:
+- get = app.get('route',fn)
+- post = app.post('route',fn)
+- delete = app.delete('route',fn)
+
+
+Middleware = it sents the code that runs between the request and the response
+
+
+Query Strings = Additional data added into a HTTP request in the form of name value pairs
