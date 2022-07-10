@@ -34,6 +34,7 @@ router.get('/:id', (req, res)=>{
 //vtor nacin na kreiranje router:
 
 router.route('/:id')
+
 .get((req, res)=>{
    console.log(req.user);
     res.send(`Get User With ID ${req.params.id}`)})

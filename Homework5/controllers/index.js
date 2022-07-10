@@ -1,0 +1,55 @@
+const users = [{id: 1, name: 'Stefan', lastname: 'Mitevski', ssn:'123456789', }]
+
+module.exports = {
+    index: (req, res) => {
+        res.render('index', {title: 'User List',  users: users })
+    },
+
+    // hehe: (req, res) => {
+    //     res.render('hehe', {title: 'Hehe Express', subtitle: 'hehe OG'})
+    // },
+
+    viewUser: (req, res) => {
+        const user = users.find(user => user.id == req.params.id);
+    
+        res.render('view-user', {user: user});
+    },
+
+    editUser: (req, res) => {
+        const user = users.find(user => user.id == req.params.id);
+
+        res.render('edit-user', { user: user});
+    },
+
+    create: (req, res) => {
+        res.render('create');
+    },
+
+    postCreate: (req, res) => {
+        const user = req.body;
+        user.id = users.lenght +1;
+
+        users.push(user);
+
+        res.redirect('/');
+    },
+
+    putEditUser: (req, res) => {
+        userIndex = users.findIndex((user => user.id == req.params.id));
+        users[userIndex] = req.body;
+
+        res.send({
+            success: true
+        });
+    },
+
+    deleteUser: (req,res) => {
+        userIndex = users.findIndex((user => user.id == req.params.id))
+        users.splice(userIndex,1);
+        console.log("DELETE Request Called for ./user/:id")
+        res.send("DELETE Request Called")
+        
+        res.redirect('/');
+    }
+
+}
