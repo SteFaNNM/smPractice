@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/javascripts/index.js" ></script>
+</head>
+<body>
+    <a href="/">Home</a>
+    <br>
+    <form onsubmit="event.preventDefault()" id="form">
+        Car Name: <input type="text" name="car_name" value="<%= car.car_name %>"><br>
+        Car Type: <input type="text" name="car_type" value="<%= car.car_type %>"><br>
+        Year: <input type="text" name="year" value="<%= car.year %>"><br>
+        Color:<input type="text" name="color" value="<%= car.color %>"><br>
+        Is in stock: <input type="text" name="in_stock" value="<%= car.in_stock %>">
+
+        <button onclick="updateInfo(`<%= car._id %>`)">Update Car Info</button>
+    </form>
+</body>
+</html>

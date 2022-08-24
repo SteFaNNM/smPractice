@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title  %></title>
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/new">Add new car</a>
+    <h2>Cars</h2>
+    <table>
+     <% cars.forEach(car => { %>
+      <tr>
+        <!-- <td>ID #<%= car._id %></td> -->
+        <td><%= car.car_name %></td>
+        <td><%= car.car_type %></td>
+        <td><%= car.year %></td>
+        <td><%= car.color %></td>
+        <td><%= car.in_stock %></td>
+        <td><a href="/car/<%= car.id %>/view">View</a></td>
+        <td><a href="/car/<%= car.id %>/edit">Edit</a></td>
+        <td><button onclick="deleteCar(`<%= car._id %>`)">Delete</button></td>
+      </tr>
+     <% }) %>
+    </table>
+  </body>
+</html>

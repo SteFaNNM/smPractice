@@ -43,13 +43,16 @@ module.exports = {
         });
     },
 
-    deleteUser: (req,res) => {
-        userIndex = users.findIndex((user => user.id == req.params.id))
-        users.splice(userIndex,1);
-        console.log("DELETE Request Called for ./user/:id")
-        res.send("DELETE Request Called")
+    deleteUser: (req, res) => { 
+        userID = users.findIndex((user => user.id == req.params.id));
+
+        users.splice(userID,1);
         
-        res.redirect('/');
+        res.send({
+            success: true
+        });
+
+
     }
 
 }
